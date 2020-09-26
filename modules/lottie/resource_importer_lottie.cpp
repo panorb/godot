@@ -47,8 +47,8 @@ void ResourceImporterLottie::get_import_options(List<ImportOption> *r_options, i
 	r_options->push_back(ImportOption(PropertyInfo(Variant::BOOL, "3d"), false));
 	Dictionary d = Engine::get_singleton()->get_version_info();
 	if (!(d["major"] == Variant(3) && d["minor"] == Variant(1))) {
-		r_options->push_back(ImportOption(PropertyInfo(Variant::BOOL, "compress/video_ram"), true));
-		r_options->push_back(ImportOption(PropertyInfo(Variant::REAL, "compress/lossy_quality", PROPERTY_HINT_RANGE, "0,1,0.01"), 0.7));
+		r_options->push_back(ImportOption(PropertyInfo(Variant::BOOL, "compress/video_ram"), false));
+		r_options->push_back(ImportOption(PropertyInfo(Variant::REAL, "compress/lossy_quality", PROPERTY_HINT_RANGE, "0,1,0.01"), 0));
 	}
 	r_options->push_back(ImportOption(PropertyInfo(Variant::INT, "start_frame", PROPERTY_HINT_RANGE, "0,65536,1,or_greater"), 0));
 	r_options->push_back(ImportOption(PropertyInfo(Variant::VECTOR2, "scale"), Vector2(1.0f, 1.0f)));
